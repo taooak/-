@@ -1,0 +1,12 @@
+反屏幕撕裂方法 ( avoid screen tearing / archwiki)
+命令
+$ nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCompositionPipel
+ine = On }"
+
+或改配置文件
+~$ nvidia-xconfig
+~$ cd /etc/X11/
+~$ sudo vim xorg.conf
+将此文件的 Section "Screen" 部分加入:
+Option "metamodes" "nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }"
+重启即可
